@@ -22,6 +22,25 @@ namespace FreelancerBackend.Controllers
             return View();
         }
 
+        public IActionResult Barbi()
+        {
+            Random r = new Random();
+            return View(r.Next(10,100));
+        }
+
+        [HttpGet]
+        public IActionResult CreateProfile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateProfile(User u)
+        {
+            return RedirectToAction("Index");
+        }
+
+
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
