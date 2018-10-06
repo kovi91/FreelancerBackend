@@ -27,7 +27,8 @@ namespace FreelancerBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer("Server=tcp:icseksql.database.windows.net,1433;Initial Catalog=freelancersql;Persist Security Info=False;User ID=icsek;Password=Q1w2E3r4;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
             services.AddIdentity<ApplicationUser, IdentityRole>(opt =>
             {
